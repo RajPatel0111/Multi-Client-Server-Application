@@ -37,7 +37,7 @@ public class ClientInstances extends Thread {
 				if(command.equals(ServerDetails.QUIT))
 				{
 					System.out.println("Client has Disconnected");
-					dos.writeUTF("Good Bye Charlie. See you soon.");
+					dos.writeUTF("Good Bye Client. Hope See you soon.");
 					dos.flush();
 					break;
 				}
