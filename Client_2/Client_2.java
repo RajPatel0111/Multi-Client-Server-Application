@@ -6,10 +6,10 @@ import java.io.FileOutputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Client_2 {
+public class Client_1 {
 	
 	static String instruction = 
-			"Enter the request below:\n"
+			"Enter the command below:\n"
 			+"1) get <fileName>\n"
 			+"2) put <fileName>\n"
 			+"3) quit\n"
@@ -18,7 +18,7 @@ public class Client_2 {
 	public static void main(String[] args) throws Exception {
 		
 		System.out.println("This is Client");
-		Socket socket = new Socket("localhost",3000);			// To connect to the server using it's IpAddress
+		Socket socket = new Socket("localhost",3000);			// To connect to the server using it's IP Address
 		
 		System.out.println("Client started successfully.");
 		
@@ -52,7 +52,7 @@ public class Client_2 {
 		socket.close();
 	}
 
-/* isFileExist() function is to check the file existence on the client storage*/		
+/* isFileExist() used to check the file existence on the client storage*/		
 public static boolean isFileExist(String fileName) {
 	
 	boolean isFile = false;
@@ -61,7 +61,7 @@ public static boolean isFileExist(String fileName) {
 	return isFile;
 }
 
-/* downloadFile() function is to download the file from the server */
+/* downloadFile() used to download the file from the server */
 public static void downloadFile (String fileName, byte[] fileBytes) 
 		throws Exception {
 	
@@ -72,7 +72,7 @@ public static void downloadFile (String fileName, byte[] fileBytes)
 	downloadFile.close();
 }
 
-/* uploadFile() function is to upload the file to the server*/
+/* uploadFile() used to upload the file to the server*/
 public static byte[] uploadFile (String fileName)
 		throws Exception {
 	
@@ -85,7 +85,7 @@ public static byte[] uploadFile (String fileName)
 	return fileBytes;
 }
 
-/* handle_request() function is to handle upload or download request of the client*/
+/* handle_request() used to handle upload or download request of the client*/
 public static void handle_request (String request, 
 		DataInputStream dis, DataOutputStream dos) throws Exception {
 	
@@ -104,7 +104,7 @@ public static void handle_request (String request,
 			dis.readFully(fileBytes);
 			downloadFile(request_parts[1], fileBytes);
 			
-			System.out.println("File Downloaded Successfully");
+			System.out.println("File is Successfully Downloaded");
 		}
 		
 		else {
@@ -125,16 +125,16 @@ public static void handle_request (String request,
 			dos.write(fileBytes);
 			dos.flush();
 			
-			System.out.println("File Uploaded Successfully");
+			System.out.println("File is Successfully Uploaded ");
 			
 		}
 		else {
-			System.out.println("File doesn't exists. Please enter other file name.");
+			System.out.println(" Sorry, File doesn't exists. Please enter another file name.");
 		}
 	}
 	
 	else {
-		dos.writeUTF("Wrong input.\n" + instruction);
+		dos.writeUTF("Your imput is Wrong.\n" + instruction);
 		dos.flush();
 	}
 
