@@ -27,12 +27,12 @@ public class StartServer {
 		RunServer r = new RunServer();
 		s = r.setServerSocket(ServerDetails.PORT);
 		
-		System.out.println("Server Stared Successfully");
+		System.out.println("Server Started Successfully");
 		
 		while(true)
 		{
 			Socket s1 = s.accept();
-			System.out.println("Client Connected Successfully.");
+			System.out.println("Client is Successfully Connected, Go ahead Client");
 			ClientInstances cl = new ClientInstances(s1);
 			cl.start();
 		}
