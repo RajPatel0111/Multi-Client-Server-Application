@@ -6,7 +6,7 @@ public class ServerDetails {
 			
 			"Advanced System Programming: Final Project.\n"
 			+ "This project is created by Yash and Raj Patel.\n"
-			+ "Hi, My name is Bravo. Good to See you charlie.\n"
+			+ "Hi, My name is Client. Good to See you Server.\n"
 			+ "Enter one the command below";
 	
 	public final static String COMMAND_LIST = "\n 1) get <fileName>\n 2) put <fileName>\n 3) quit\n";
