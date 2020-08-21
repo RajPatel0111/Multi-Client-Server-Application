@@ -29,7 +29,7 @@ public class ServerDetails {
 			
 	public final static String BRAVO = "This is Bravo.";
 	
-	public final static String FILE_NAME = "Enter New File name to save that file.";
+	public final static String FILE_NAME = "Enter New File name to save the file.";
 	
 	public final static int PORT = 3333;
 
