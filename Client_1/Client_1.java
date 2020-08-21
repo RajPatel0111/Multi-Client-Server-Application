@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Client_1 {
 	
 	static String instruction = 
-			"Enter the request below:\n"
+			"Enter the command below:\n"
 			+"1) get <fileName>\n"
 			+"2) put <fileName>\n"
 			+"3) quit\n"
@@ -104,7 +104,7 @@ public static void handle_request (String request,
 			dis.readFully(fileBytes);
 			downloadFile(request_parts[1], fileBytes);
 			
-			System.out.println("File Downloaded Successfully");
+			System.out.println("File is Successfully Downloaded");
 		}
 		
 		else {
@@ -125,16 +125,16 @@ public static void handle_request (String request,
 			dos.write(fileBytes);
 			dos.flush();
 			
-			System.out.println("File Uploaded Successfully");
+			System.out.println("File is Successfully Uploaded ");
 			
 		}
 		else {
-			System.out.println("File doesn't exists. Please enter other file name.");
+			System.out.println(" Sorry, File doesn't exists. Please enter another file name.");
 		}
 	}
 	
 	else {
-		dos.writeUTF("Wrong input.\n" + instruction);
+		dos.writeUTF("Your imput is Wrong.\n" + instruction);
 		dos.flush();
 	}
 
