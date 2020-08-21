@@ -43,7 +43,7 @@ public class ServerExecution {
 			dos.write(fileBytes);
 			dos.flush();
 
-			System.out.println("Upload Operation is Done.");
+			System.out.println("Upload Operation is Successfully Completed.");
 			
 		}
 		
@@ -64,7 +64,7 @@ public class ServerExecution {
 		dis.readFully(fileBytes);
 		 
 		Read_and_Write.writeFile(fileName, fileBytes);
-		System.out.println("Download Operation is Done.");
+		System.out.println("Download Operation is Successfully Completed.");
 		
 	}
 
